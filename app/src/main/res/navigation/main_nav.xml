@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/categoriesFragment">
+
+    <fragment
+        android:id="@+id/foodListFragment"
+        android:name="com.balran.themealhub.ui.food.list.FoodListFragment"
+        android:label="Foods"
+        tools:layout="@layout/fragment_food_list">
+        <action
+            android:id="@+id/action_foodListFragment_to_foodDetailsFragment"
+            app:destination="@id/foodDetailsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/foodDetailsFragment"
+        android:name="com.balran.themealhub.ui.food.details.FoodDetailsFragment"
+        android:label="Details"
+        tools:layout="@layout/fragment_food_details" />
+    <fragment
+        android:id="@+id/categoriesFragment"
+        android:name="com.balran.themealhub.ui.food.categories.CategoriesFragment"
+        android:label="Categories"
+        tools:layout="@layout/fragment_categories">
+        <action
+            android:id="@+id/action_categoriesFragment_to_foodListFragment"
+            app:destination="@id/foodListFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+</navigation>

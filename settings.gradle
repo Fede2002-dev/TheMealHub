@@ -1,0 +1,6 @@
+include ':usecases'
+include ':data'
+include ':data'
+include ':Domain'
+include ':app'
+rootProject.name = "TheMealHub"
