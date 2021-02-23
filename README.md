@@ -15,7 +15,7 @@ Clean architecture with MVVM pattern.
 - Domain  
 - Use cases
 
-![](https://koenig-media.raywenderlich.com/uploads/2019/06/Android-Clean-Architecture.png)  
+![](https://i.imgur.com/1ODDW5p.png?1)  
 
 ## Pictures
 ![img](https://i.imgur.com/SVjNNsT.jpg?1)
