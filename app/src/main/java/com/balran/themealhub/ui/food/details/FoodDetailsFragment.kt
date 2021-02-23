@@ -12,29 +12,24 @@ import com.balran.domain.Food
 import com.balran.domain.Resource
 import com.balran.themealhub.R
 import com.balran.themealhub.databinding.FragmentFoodDetailsBinding
-import com.balran.themealhub.databinding.FragmentFoodListBinding
 import com.balran.themealhub.framework.retrofit.RemoteFoodDataSource
 import com.balran.themealhub.framework.room.AppDatabase
 import com.balran.themealhub.framework.room.LocalFoodDataSource
 import com.balran.themealhub.model.FoodModel
 import com.balran.themealhub.model.toFoodDomain
-import com.balran.themealhub.model.toPresentationModel
 import com.balran.themealhub.utils.Constants
 import com.balran.themealhub.utils.hide
 import com.balran.themealhub.utils.show
-import com.balran.themealhub.utils.showToast
 import com.balran.usecases.local.CheckMealFavouriteUseCase
 import com.balran.usecases.local.DeleteFavouriteUseCase
 import com.balran.usecases.local.InsertFavoriteUseCase
 import com.balran.usecases.remote.GetFoodByIdUseCase
 import com.bumptech.glide.Glide
 import com.google.android.material.chip.Chip
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
+
 
 class FoodDetailsFragment : Fragment() {
-    private lateinit var binding:FragmentFoodDetailsBinding
+    private lateinit var binding: FragmentFoodDetailsBinding
 
     private val detailsViewModel: FoodDetailsFragmentViewModel by viewModels {
         val localFoodsRepository =

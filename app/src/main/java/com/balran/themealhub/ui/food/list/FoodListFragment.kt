@@ -2,9 +2,7 @@ package com.balran.themealhub.ui.food.list
 
 import android.content.res.Configuration
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -37,6 +35,7 @@ class FoodListFragment : Fragment(), FoodListAdapter.OnCocktailClickListener {
             category=it.getString(Constants.ARG_CATEGORY)!!
             viewModel.getMealsByCategory(category)
         }
+        setHasOptionsMenu(true)
     }
 
     override fun onCreateView(
@@ -85,5 +84,21 @@ class FoodListFragment : Fragment(), FoodListAdapter.OnCocktailClickListener {
         val bundle = Bundle()
         bundle.putString(Constants.ARG_IDFOOD, food.idMeal)
         findNavController().navigate(R.id.action_foodListFragment_to_foodDetailsFragment, bundle)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+
+        inflater.inflate(R.menu.main_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.favourites -> {
+                findNavController().navigate(R.id.action_categoriesFragment_to_mealFavouriteDetailsFragment)
+                false
+            }
+            else -> false
+        }
     }
 }

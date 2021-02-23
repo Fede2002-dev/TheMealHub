@@ -31,46 +31,52 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
                 <com.github.chrisbanes.photoview.PhotoView
                     android:id="@+id/iv_meal"
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
-                    android:scaleType="centerInside"
+                    android:contentDescription="@string/image_description"
+                    android:scaleType="centerCrop"
                     android:src="@mipmap/loading"
-                    android:contentDescription="@string/image_description" />
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <com.google.android.material.floatingactionbutton.FloatingActionButton
                     android:id="@+id/fab_favourite"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginEnd="12dp"
-                    android:layout_marginRight="12dp"
-                    android:background="@color/ic_launcher_background"
-                    app:backgroundTint="@color/ic_launcher_background"
+                    android:layout_marginTop="170dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:background="@color/colorAccent"
                     android:clickable="true"
                     android:focusable="true"
                     android:src="@drawable/ic_baseline_favorite_24"
                     android:tint="@android:color/white"
+                    app:backgroundTint="@color/colorAccent"
                     app:elevation="0dp"
-                    android:layout_marginBottom="4dp"/>
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/tv_meal_title"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:textSize="20sp"
+                    android:maxLines="3"
                     android:textColor="@android:color/black"
-                    tools:text="This is a title"
-                    android:layout_margin="8dp"
-                    android:layout_below="@id/iv_meal"/>
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toStartOf="@+id/fab_favourite"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_meal"
+                    tools:text="This is a title This is a titleThis is a title This is a titleThis is a title This is a title" android:layout_marginHorizontal="8dp"
+                    android:layout_marginVertical="8dp"/>
 
-            </RelativeLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
