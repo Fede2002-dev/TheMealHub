@@ -1,4 +1,4 @@
-package com.balran.themealhub.framework
+package com.balran.themealhub.framework.retrofit
 
 import com.balran.domain.Food
 import com.balran.themealhub.model.CategoryList

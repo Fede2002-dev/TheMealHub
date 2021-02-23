@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.balran.domain.Category
 import com.balran.domain.Resource
-import com.balran.usecases.GetAllCategoriesUseCase
+import com.balran.usecases.remote.GetAllCategoriesUseCase
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

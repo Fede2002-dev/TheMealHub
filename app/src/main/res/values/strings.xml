@@ -5,4 +5,7 @@
     <string name="image_description">Image description</string>
     <string name="instructions">Instructions:</string>
     <string name="ingredients">Ingredients:</string>
+    <string name="no_meals_found">No meals found</string>
+    <string name="retry">Retry</string>
+    <string name="favourites">Favourites</string>
 </resources>

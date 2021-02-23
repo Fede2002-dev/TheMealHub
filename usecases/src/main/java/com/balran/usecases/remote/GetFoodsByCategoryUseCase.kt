@@ -1,4 +1,4 @@
-package com.balran.usecases
+package com.balran.usecases.remote
 
 import com.balran.data.FoodsRepository
 import com.balran.domain.Food

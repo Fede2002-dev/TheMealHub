@@ -10,6 +10,10 @@
         android:visibility="gone"
         layout="@layout/empty_error_container"/>
 
+    <include android:id="@+id/no_meals_container"
+        android:visibility="gone"
+        layout="@layout/no_item_container"/>
+
     <RelativeLayout
         android:id="@+id/progress_circular"
         android:layout_width="match_parent"

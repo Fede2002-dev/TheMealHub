@@ -31,22 +31,46 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <com.github.chrisbanes.photoview.PhotoView
-                android:id="@+id/iv_meal"
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:scaleType="centerCrop"
-                android:src="@mipmap/loading"
-                android:contentDescription="@string/image_description" />
-
-            <TextView
-                android:id="@+id/tv_meal_title"
+            <RelativeLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:textColor="@android:color/black"
-                tools:text="This is a title"
-                android:layout_margin="8dp"/>
+                android:layout_height="wrap_content">
+                <com.github.chrisbanes.photoview.PhotoView
+                    android:id="@+id/iv_meal"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:scaleType="centerInside"
+                    android:src="@mipmap/loading"
+                    android:contentDescription="@string/image_description" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/fab_favourite"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="12dp"
+                    android:layout_marginRight="12dp"
+                    android:background="@color/ic_launcher_background"
+                    app:backgroundTint="@color/ic_launcher_background"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:src="@drawable/ic_baseline_favorite_24"
+                    android:tint="@android:color/white"
+                    app:elevation="0dp"
+                    android:layout_marginBottom="4dp"/>
+
+                <TextView
+                    android:id="@+id/tv_meal_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:textColor="@android:color/black"
+                    tools:text="This is a title"
+                    android:layout_margin="8dp"
+                    android:layout_below="@id/iv_meal"/>
+
+            </RelativeLayout>
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"

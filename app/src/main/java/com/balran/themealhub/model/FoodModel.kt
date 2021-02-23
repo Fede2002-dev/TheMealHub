@@ -5,11 +5,12 @@ import com.balran.domain.Food
 import com.balran.domain.Ingredient
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
+import kotlinx.android.parcel.RawValue
 
 @Parcelize
 data class FoodModel(
         @SerializedName("idMeal")
-        val idMeal:String,
+        val idMeal: String,
         @SerializedName("strMeal")
         val strMeal: String,
         @SerializedName("strCategory")
@@ -59,16 +60,55 @@ data class FoodModel(
         @SerializedName("strIngredient19")
         val strIngredient19: String?,
         @SerializedName("strIngredient20")
-        val strIngredient20: String?
+        val strIngredient20: String?,
+        val ingredients: List<IngredientModel>?
 ) : Parcelable
 
 data class FoodList(@SerializedName("meals") val foodList: List<FoodModel>)
 
 //Extensions functions
 fun FoodModel.toFoodDomain(): Food =
-        Food(idMeal,strMeal, strCategory, strArea, strInstructions, strMealThumb, this.getIngredientsList())
+    Food(
+            idMeal,
+            strMeal,
+            strCategory,
+            strArea,
+            strInstructions,
+            strMealThumb,
+            getIngredientsList()
+    )
 
-fun FoodList.toDomain():List<Food> = this.foodList.map { it.toFoodDomain() }
+fun FoodList.toDomain(): List<Food> = this.foodList.map { it.toFoodDomain() }
+fun Food.toPresentationModel(): FoodModel = FoodModel(
+        idMeal,
+        strMeal,
+        strCategory,
+        strArea,
+        strInstructions,
+        strMealThumb,
+        ingredients[0].name,
+        ingredients[1].name,
+        ingredients[2].name,
+        ingredients[3].name,
+        ingredients[4].name,
+        ingredients[5].name,
+        ingredients[6].name,
+        ingredients[7].name,
+        ingredients[8].name,
+        ingredients[9].name,
+        ingredients[10].name,
+        ingredients[11].name,
+        ingredients[12].name,
+        ingredients[13].name,
+        ingredients[14].name,
+        ingredients[15].name,
+        ingredients[16].name,
+        ingredients[17].name,
+        ingredients[18].name,
+        ingredients[19].name,
+        ingredients.map { it.toIngredientPresentation() }
+)
+
 
 fun FoodModel.getIngredientsList(): List<Ingredient> {
     return listOf(

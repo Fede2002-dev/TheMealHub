@@ -1,4 +1,4 @@
-package com.balran.themealhub.framework
+package com.balran.themealhub.framework.retrofit
 
 import com.balran.data.FoodsDataSource
 import com.balran.domain.Food
