@@ -95,7 +95,7 @@ class FoodListFragment : Fragment(), FoodListAdapter.OnCocktailClickListener {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.favourites -> {
-                findNavController().navigate(R.id.action_categoriesFragment_to_mealFavouriteDetailsFragment)
+                findNavController().navigate(R.id.action_foodListFragment_to_mealFavouriteDetailsFragment)
                 false
             }
             else -> false
