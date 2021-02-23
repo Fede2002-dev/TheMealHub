@@ -6,6 +6,7 @@ This is a cocktail's app builded for android with kotlin. This app is built with
 - Retrofit
 - Navigation Components
 - ViewBinding
+- Room
 ## Architecture
 Clean architecture with MVVM pattern.  
 **Layers:**  
@@ -21,6 +22,6 @@ Clean architecture with MVVM pattern.
 ![img](https://i.imgur.com/zkyUgJb.jpg?1)
 ![img](https://i.imgur.com/5QatNe8.jpg?1)
 ![img](https://i.imgur.com/dRUzikB.jpg?1)
-![img](https://i.imgur.com/RZpZcLZ.jpg)
+![img](https://i.imgur.com/RZpZcLZ.jpg?1)
 ![img](https://i.imgur.com/fxvY8qQ.jpg?1)
 
